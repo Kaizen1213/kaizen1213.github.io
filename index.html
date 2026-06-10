@@ -28,6 +28,10 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            overflow: hidden;  /* полностью убирает скролл */
+    height: 100vh;     /* фиксирует высоту на весь экран */
+    margin: 0;
+    padding: 0;
         }
 
         .card {
@@ -180,6 +184,8 @@
 
         .card {
             animation: fadeIn 0.5s ease-out;
+            max-height: 98vh;   /* гарантия, что карточка не вылезет за экран */
+    overflow-y: auto;   /* если вдруг контент всё же не влезет — скролл будет только у карточки, но у тебя не влезет */
         }
 
         @media (max-width: 480px) {
