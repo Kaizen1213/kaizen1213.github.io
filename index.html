@@ -2,125 +2,74 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elizabethpos1 | Dota 2 Edits</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         html, body {
-            margin: 0;
-            padding: 0;
             height: 100%;
             overflow: hidden;
         }
 
         body {
-            font-family: 'Segoe UI', 'Poppins', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #0a0a0a;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 16px;
-            overflow: hidden;
         }
 
         .card {
             max-width: 340px;
             width: 100%;
-            background: #0a0a0a;  /* ← ЧЁРНЫЙ ФОН КАРТОЧКИ */
-            backdrop-filter: blur(10px);
+            background: #0e0e0e;
             border-radius: 28px;
-            padding: 30px 20px 26px;
+            padding: 28px 20px 24px;
             text-align: center;
-            border: 1px solid rgba(230, 230, 168, 0.25);
-            box-shadow: 
-                0 0 30px rgba(230, 230, 168, 0.15),
-                0 0 60px rgba(230, 230, 168, 0.08),
-                0 0 90px rgba(230, 230, 168, 0.04),
-                0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            animation: fadeIn 0.8s ease-out, glowPulse 3.5s ease-in-out infinite;
+            border: 1px solid rgba(230, 230, 168, 0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        @keyframes glowPulse {
-            0% {
-                box-shadow: 
-                    0 0 30px rgba(230, 230, 168, 0.15),
-                    0 0 60px rgba(230, 230, 168, 0.08),
-                    0 0 90px rgba(230, 230, 168, 0.04),
-                    0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            }
-            50% {
-                box-shadow: 
-                    0 0 45px rgba(230, 230, 168, 0.35),
-                    0 0 80px rgba(230, 230, 168, 0.18),
-                    0 0 120px rgba(230, 230, 168, 0.08),
-                    0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            }
-            100% {
-                box-shadow: 
-                    0 0 30px rgba(230, 230, 168, 0.15),
-                    0 0 60px rgba(230, 230, 168, 0.08),
-                    0 0 90px rgba(230, 230, 168, 0.04),
-                    0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            }
-        }
-
-        /* АВАТАРКА — ИЗ РЕПОЗИТОРИЯ (надёжно и быстро) */
+        /* Аватарка — из репозитория */
         .avatar {
             width: 80px;
             height: 80px;
-            background: url('avatar.jpg') center center / cover no-repeat;
-            background-color: #0a0a0a;
+            background: url('avatar.png') center center / cover no-repeat;
+            background-color: #0e0e0e;
             border-radius: 50%;
             margin: 0 auto 14px;
-            border: 2px solid rgba(230, 230, 168, 0.3);
-            box-shadow: 0 0 30px rgba(230, 230, 168, 0.15);
-            animation: avatarFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes avatarFloat {
-            0% { transform: translateY(0px); box-shadow: 0 0 30px rgba(230, 230, 168, 0.15); }
-            50% { transform: translateY(-5px); box-shadow: 0 0 50px rgba(230, 230, 168, 0.25); }
-            100% { transform: translateY(0px); box-shadow: 0 0 30px rgba(230, 230, 168, 0.15); }
+            border: 1px solid rgba(230, 230, 168, 0.2);
         }
 
         h1 {
-            color: white;
+            color: #ffffff;
             font-size: 20px;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            margin-bottom: 4px;
         }
 
         .badge {
             display: inline-block;
-            background: rgba(230, 230, 168, 0.15);
+            background: rgba(230, 230, 168, 0.12);
             color: #e6e6a8;
-            padding: 3px 12px;
-            border-radius: 20px;
             font-size: 11px;
             font-weight: 500;
-            margin-bottom: 16px;
-            border: 1px solid rgba(230, 230, 168, 0.3);
+            padding: 4px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(230, 230, 168, 0.15);
+            margin-bottom: 14px;
         }
 
         .description {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 12.5px;
+            font-size: 13px;
             line-height: 1.6;
             margin-bottom: 16px;
         }
@@ -129,21 +78,20 @@
             color: #e6e6a8;
             font-size: 13px;
             font-weight: 700;
-            margin-top: -4px;
-            margin-bottom: 18px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             text-transform: uppercase;
-            background: rgba(230, 230, 168, 0.1);
-            display: inline-block;
-            padding: 4px 12px;
+            background: rgba(230, 230, 168, 0.06);
+            padding: 4px 14px;
             border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 18px;
         }
 
         .links {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .btn {
@@ -151,38 +99,37 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 11px 16px;
+            padding: 12px 16px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            border: 1px solid transparent;
+            transition: opacity 0.15s ease;
         }
 
-        .btn:hover {
-            transform: translateY(-2px) scale(1.02);
+        .btn:active {
+            opacity: 0.7;
         }
 
         .btn-tiktok {
-            background: linear-gradient(135deg, #000000, #1a1a1a);
+            background: #111111;
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-tiktok:hover {
-            border-color: #e6e6a8;
-            box-shadow: 0 0 30px rgba(230, 230, 168, 0.15);
+            border-color: rgba(255, 255, 255, 0.08);
         }
 
         .btn-telegram {
-            background: linear-gradient(135deg, #0088cc, #006699);
+            background: #0088cc;
             color: white;
         }
 
-        .btn-telegram:hover {
-            box-shadow: 0 0 30px rgba(0, 136, 204, 0.3);
+        /* Фикс для иконок — теперь идеально ровные */
+        .btn svg {
+            display: block;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            fill: white;
         }
 
         .stats {
@@ -190,16 +137,11 @@
             justify-content: center;
             gap: 18px;
             padding-top: 16px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .stat {
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .stat:hover {
-            transform: scale(1.05);
         }
 
         .stat-number {
@@ -209,100 +151,53 @@
         }
 
         .stat-label {
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.4);
             font-size: 9px;
             text-transform: uppercase;
             letter-spacing: 0.3px;
+            margin-top: 2px;
         }
 
         .footer {
-            margin-top: 16px;
-            color: rgba(255, 255, 255, 0.3);
+            margin-top: 14px;
+            color: rgba(255, 255, 255, 0.2);
             font-size: 9px;
         }
 
-        /* МОБИЛЬНАЯ АДАПТАЦИЯ */
+        /* Мобильная адаптация */
         @media (max-width: 480px) {
-            body {
-                padding: 12px;
-            }
+            body { padding: 12px; }
             .card {
                 max-width: 320px;
-                padding: 24px 16px 22px;
+                padding: 22px 16px 18px;
                 border-radius: 24px;
             }
-            .avatar {
-                width: 70px;
-                height: 70px;
-                margin-bottom: 10px;
-            }
-            h1 {
-                font-size: 18px;
-            }
-            .badge {
-                font-size: 10px;
-                padding: 2px 10px;
-                margin-bottom: 12px;
-            }
-            .description {
-                font-size: 11.5px;
-                margin-bottom: 14px;
-            }
-            .old-school {
-                font-size: 11.5px;
-                padding: 4px 10px;
-                margin-bottom: 14px;
-            }
-            .btn {
-                padding: 10px 14px;
-                font-size: 13px;
-                gap: 8px;
-            }
-            .btn svg {
-                width: 16px;
-                height: 16px;
-            }
-            .stats {
-                gap: 14px;
-                padding-top: 14px;
-            }
-            .stat-number {
-                font-size: 14px;
-            }
-            .stat-label {
-                font-size: 8px;
-            }
-            .footer {
-                font-size: 8px;
-                margin-top: 12px;
-            }
+            .avatar { width: 68px; height: 68px; margin-bottom: 10px; }
+            h1 { font-size: 18px; }
+            .badge { font-size: 10px; padding: 3px 10px; margin-bottom: 10px; }
+            .description { font-size: 12px; margin-bottom: 12px; }
+            .old-school { font-size: 11px; padding: 3px 10px; margin-bottom: 14px; }
+            .btn { padding: 10px 14px; font-size: 13px; gap: 8px; }
+            .btn svg { width: 18px; height: 18px; }
+            .stats { gap: 14px; padding-top: 12px; }
+            .stat-number { font-size: 14px; }
+            .stat-label { font-size: 8px; }
+            .footer { font-size: 8px; margin-top: 10px; }
         }
 
         @media (max-width: 380px) {
             .card {
                 max-width: 280px;
-                padding: 18px 12px 16px;
+                padding: 16px 10px 14px;
+                border-radius: 20px;
             }
-            .avatar {
-                width: 58px;
-                height: 58px;
-            }
-            h1 {
-                font-size: 16px;
-            }
-            .description {
-                font-size: 10.5px;
-            }
-            .old-school {
-                font-size: 10px;
-            }
-            .btn {
-                font-size: 11px;
-                padding: 8px 10px;
-            }
-            .stat-number {
-                font-size: 12px;
-            }
+            .avatar { width: 56px; height: 56px; }
+            h1 { font-size: 16px; }
+            .description { font-size: 10.5px; }
+            .old-school { font-size: 10px; }
+            .btn { font-size: 11px; padding: 8px 10px; }
+            .btn svg { width: 16px; height: 16px; }
+            .stat-number { font-size: 12px; }
         }
     </style>
 </head>
@@ -323,19 +218,19 @@
         
         <div class="links">
             <a href="https://www.tiktok.com/@elizabethpos1" target="_blank" class="btn btn-tiktok">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.589 6.686a5.037 5.037 0 0 1-3.888-1.77 5.037 5.037 0 0 1-1.248-3.416h-2.82v13.3a3.02 3.02 0 0 1-3.01 2.79 3.02 3.02 0 0 1-3.011-2.79 3.02 3.02 0 0 1 3.01-2.79c.244 0 .482.034.71.093V9.536a5.88 5.88 0 0 0-.71-.046 5.88 5.88 0 0 0-5.882 5.882 5.88 5.88 0 0 0 5.882 5.882 5.88 5.88 0 0 0 5.882-5.882v-6.49a7.05 7.05 0 0 0 4.3 1.47V7.857c-.233 0-.46-.03-.681-.086a5.06 5.06 0 0 1-1.126-.714 5.03 5.03 0 0 1-1.436-1.778h.001z" fill="white"/>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.589 6.686a5.037 5.037 0 0 1-3.888-1.77 5.037 5.037 0 0 1-1.248-3.416h-2.82v13.3a3.02 3.02 0 0 1-3.01 2.79 3.02 3.02 0 0 1-3.011-2.79 3.02 3.02 0 0 1 3.01-2.79c.244 0 .482.034.71.093V9.536a5.88 5.88 0 0 0-.71-.046 5.88 5.88 0 0 0-5.882 5.882 5.88 5.88 0 0 0 5.882 5.882 5.88 5.88 0 0 0 5.882-5.882v-6.49a7.05 7.05 0 0 0 4.3 1.47V7.857c-.233 0-.46-.03-.681-.086a5.06 5.06 0 0 1-1.126-.714 5.03 5.03 0 0 1-1.436-1.778h.001z"/>
                 </svg>
                 TikTok
-                <span style="margin-left: auto; opacity: 0.7;">→</span>
+                <span style="margin-left: auto; opacity: 0.5; font-size: 13px;">→</span>
             </a>
             
             <a href="https://t.me/elizabethpos1" target="_blank" class="btn btn-telegram">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21.5 4.5L2.5 10.5C1.5 10.9 1.5 11.9 2.4 12.3L6.5 14L18.5 7.5C19 7.2 19.5 7.6 19.1 8L9.5 16.5V21L12.5 18.5L16.5 21L21.5 4.5Z" fill="white"/>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.5 4.5L2.5 10.5C1.5 10.9 1.5 11.9 2.4 12.3L6.5 14L18.5 7.5C19 7.2 19.5 7.6 19.1 8L9.5 16.5V21L12.5 18.5L16.5 21L21.5 4.5Z"/>
                 </svg>
                 Telegram
-                <span style="margin-left: auto; opacity: 0.7;">→</span>
+                <span style="margin-left: auto; opacity: 0.5; font-size: 13px;">→</span>
             </a>
         </div>
         
