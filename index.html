@@ -30,40 +30,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 24px;
+            padding: 16px;
             overflow: hidden;
         }
 
         .card {
-            max-width: 360px;  /* ← стало уже */
+            max-width: 340px;
             width: 100%;
             background: rgba(15, 15, 25, 0.88);
             backdrop-filter: blur(10px);
-            border-radius: 32px;
-            padding: 28px 20px;
+            border-radius: 28px;
+            padding: 24px 18px;
             text-align: center;
             border: 1px solid rgba(230, 230, 168, 0.25);
-            
-            /* ✨ УСИЛЕННОЕ СВЕЧЕНИЕ РАМКИ ✨ */
             box-shadow: 
                 0 0 30px rgba(230, 230, 168, 0.15),
                 0 0 60px rgba(230, 230, 168, 0.08),
                 0 0 90px rgba(230, 230, 168, 0.04),
                 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            
-            animation: fadeIn 0.8s ease-out;
-            animation: glowPulse 3.5s ease-in-out infinite;
+            animation: fadeIn 0.8s ease-out, glowPulse 3.5s ease-in-out infinite;
         }
 
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         @keyframes glowPulse {
@@ -90,37 +80,31 @@
             }
         }
 
+        /* АВАТАРКА — ВСТРОЕННАЯ (base64), НЕ ЗАВИСИТ ОТ ВНЕШНИХ ССЫЛОК */
         .avatar {
-            width: 90px;  /* чуть меньше, чтобы карточка стала компактнее */
-            height: 90px;
-            background: url('https://i.postimg.cc/Zn0pLp6P/avatar.png') center center / cover no-repeat;
+            width: 80px;
+            height: 80px;
             background-color: #1a1a2e;
             border-radius: 50%;
-            margin: 0 auto 16px;
+            margin: 0 auto 12px;
             border: 2px solid rgba(230, 230, 168, 0.3);
             box-shadow: 0 0 30px rgba(230, 230, 168, 0.15);
             animation: avatarFloat 4s ease-in-out infinite;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="%231a1a2e" stroke="%23e6e6a8" stroke-width="2"/><text x="50" y="58" font-size="38" text-anchor="middle" fill="%23e6e6a8" font-family="Arial">🎮</text></svg>');
+            background-size: cover;
+            background-position: center;
         }
 
         @keyframes avatarFloat {
-            0% {
-                transform: translateY(0px);
-                box-shadow: 0 0 30px rgba(230, 230, 168, 0.15);
-            }
-            50% {
-                transform: translateY(-6px);
-                box-shadow: 0 0 50px rgba(230, 230, 168, 0.25);
-            }
-            100% {
-                transform: translateY(0px);
-                box-shadow: 0 0 30px rgba(230, 230, 168, 0.15);
-            }
+            0% { transform: translateY(0px); box-shadow: 0 0 30px rgba(230, 230, 168, 0.15); }
+            50% { transform: translateY(-5px); box-shadow: 0 0 50px rgba(230, 230, 168, 0.25); }
+            100% { transform: translateY(0px); box-shadow: 0 0 30px rgba(230, 230, 168, 0.15); }
         }
 
         h1 {
             color: white;
-            font-size: 22px;
-            margin-bottom: 6px;
+            font-size: 20px;
+            margin-bottom: 4px;
             letter-spacing: -0.5px;
         }
 
@@ -128,27 +112,27 @@
             display: inline-block;
             background: rgba(230, 230, 168, 0.15);
             color: #e6e6a8;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 500;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             border: 1px solid rgba(230, 230, 168, 0.3);
         }
 
         .description {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 13px;
+            font-size: 12.5px;
             line-height: 1.5;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
         }
 
         .old-school {
             color: #e6e6a8;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
-            margin-top: -8px;
-            margin-bottom: 18px;
+            margin-top: -6px;
+            margin-bottom: 16px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             background: rgba(230, 230, 168, 0.1);
@@ -160,8 +144,8 @@
         .links {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 18px;
+            gap: 8px;
+            margin-bottom: 16px;
         }
 
         .btn {
@@ -169,22 +153,18 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 12px 16px;
+            padding: 10px 14px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
         }
 
         .btn:hover {
-            transform: translateY(-3px) scale(1.02);
-        }
-
-        .btn:active {
-            transform: scale(0.97);
+            transform: translateY(-2px) scale(1.02);
         }
 
         .btn-tiktok {
@@ -210,10 +190,9 @@
         .stats {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding-top: 16px;
+            gap: 16px;
+            padding-top: 14px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            margin-top: 4px;
         }
 
         .stat {
@@ -227,53 +206,105 @@
 
         .stat-number {
             color: white;
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 700;
         }
 
         .stat-label {
             color: rgba(255, 255, 255, 0.5);
-            font-size: 10px;
+            font-size: 9px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
         .footer {
-            margin-top: 16px;
+            margin-top: 14px;
             color: rgba(255, 255, 255, 0.3);
-            font-size: 10px;
+            font-size: 9px;
         }
 
+        /* 📱 ОСОБЫЙ РЕЖИМ ДЛЯ МОБИЛЬНЫХ — вот тут весь приоритет */
         @media (max-width: 480px) {
             body {
-                padding: 16px;
+                padding: 12px;
             }
             .card {
-                padding: 20px 16px;
-                max-width: 340px;
+                max-width: 320px;
+                padding: 18px 14px;
+                border-radius: 24px;
             }
             .avatar {
-                width: 76px;
-                height: 76px;
-            }
-            .btn {
-                padding: 10px 14px;
-                font-size: 13px;
-            }
-            .old-school {
-                font-size: 12px;
+                width: 68px;
+                height: 68px;
+                margin-bottom: 10px;
             }
             h1 {
-                font-size: 20px;
+                font-size: 18px;
+            }
+            .badge {
+                font-size: 10px;
+                padding: 2px 8px;
+                margin-bottom: 10px;
             }
             .description {
+                font-size: 11px;
+                margin-bottom: 12px;
+            }
+            .old-school {
+                font-size: 11px;
+                padding: 3px 10px;
+                margin-bottom: 12px;
+            }
+            .btn {
+                padding: 8px 12px;
                 font-size: 12px;
+                gap: 8px;
+            }
+            .btn svg {
+                width: 16px;
+                height: 16px;
             }
             .stats {
-                gap: 14px;
+                gap: 12px;
+                padding-top: 10px;
             }
             .stat-number {
-                font-size: 15px;
+                font-size: 13px;
+            }
+            .stat-label {
+                font-size: 8px;
+            }
+            .footer {
+                font-size: 8px;
+                margin-top: 10px;
+            }
+        }
+
+        /* совсем маленькие экраны (до 380px) */
+        @media (max-width: 380px) {
+            .card {
+                max-width: 280px;
+                padding: 14px 10px;
+            }
+            .avatar {
+                width: 56px;
+                height: 56px;
+            }
+            h1 {
+                font-size: 16px;
+            }
+            .description {
+                font-size: 10px;
+            }
+            .old-school {
+                font-size: 10px;
+            }
+            .btn {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+            .stat-number {
+                font-size: 12px;
             }
         }
     </style>
@@ -295,7 +326,7 @@
         
         <div class="links">
             <a href="https://www.tiktok.com/@elizabethpos1" target="_blank" class="btn btn-tiktok">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19.589 6.686a5.037 5.037 0 0 1-3.888-1.77 5.037 5.037 0 0 1-1.248-3.416h-2.82v13.3a3.02 3.02 0 0 1-3.01 2.79 3.02 3.02 0 0 1-3.011-2.79 3.02 3.02 0 0 1 3.01-2.79c.244 0 .482.034.71.093V9.536a5.88 5.88 0 0 0-.71-.046 5.88 5.88 0 0 0-5.882 5.882 5.88 5.88 0 0 0 5.882 5.882 5.88 5.88 0 0 0 5.882-5.882v-6.49a7.05 7.05 0 0 0 4.3 1.47V7.857c-.233 0-.46-.03-.681-.086a5.06 5.06 0 0 1-1.126-.714 5.03 5.03 0 0 1-1.436-1.778h.001z" fill="white"/>
                 </svg>
                 TikTok
@@ -303,7 +334,7 @@
             </a>
             
             <a href="https://t.me/elizabethpos1" target="_blank" class="btn btn-telegram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21.5 4.5L2.5 10.5C1.5 10.9 1.5 11.9 2.4 12.3L6.5 14L18.5 7.5C19 7.2 19.5 7.6 19.1 8L9.5 16.5V21L12.5 18.5L16.5 21L21.5 4.5Z" fill="white"/>
                 </svg>
                 Telegram
