@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Elizabethpos1 | Dota 2 Edits</title>
-    
-    <!-- Фавиконы из архива favicon.io -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    
     <style>
-        /* Весь твой старый стиль остаётся без изменений */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
         }
 
         body {
@@ -28,33 +31,96 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            overflow: hidden;  /* полностью убирает скролл */
-    height: 100vh;     /* фиксирует высоту на весь экран */
-    margin: 0;
-    padding: 0;
+            overflow: hidden;
         }
 
         .card {
             max-width: 400px;
             width: 100%;
-            background: rgba(15, 15, 25, 0.9);
+            background: rgba(15, 15, 25, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 32px;
             padding: 30px 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(230, 230, 168, 0.2);
+            /* ✨ СВЕЧЕНИЕ РАМКИ ✨ */
+            box-shadow: 
+                0 0 20px rgba(230, 230, 168, 0.1),
+                0 0 40px rgba(230, 230, 168, 0.05),
+                0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                inset 0 0 30px rgba(230, 230, 168, 0.02);
+            
+            /* 🎬 АНИМАЦИЯ ПОЯВЛЕНИЯ */
+            animation: fadeIn 0.8s ease-out;
+            
+            /* 🔄 МЯГКОЕ ПУЛЬСИРУЮЩЕЕ СВЕЧЕНИЕ (бесконечно) */
+            animation: glowPulse 3s ease-in-out infinite;
         }
 
+        /* АНИМАЦИЯ ПОЯВЛЕНИЯ (при загрузке) */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* АНИМАЦИЯ ПУЛЬСИРУЮЩЕГО СВЕЧЕНИЯ (бесконечная) */
+        @keyframes glowPulse {
+            0% {
+                box-shadow: 
+                    0 0 20px rgba(230, 230, 168, 0.1),
+                    0 0 40px rgba(230, 230, 168, 0.05),
+                    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                    inset 0 0 30px rgba(230, 230, 168, 0.02);
+            }
+            50% {
+                box-shadow: 
+                    0 0 30px rgba(230, 230, 168, 0.25),
+                    0 0 60px rgba(230, 230, 168, 0.12),
+                    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                    inset 0 0 40px rgba(230, 230, 168, 0.05);
+            }
+            100% {
+                box-shadow: 
+                    0 0 20px rgba(230, 230, 168, 0.1),
+                    0 0 40px rgba(230, 230, 168, 0.05),
+                    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                    inset 0 0 30px rgba(230, 230, 168, 0.02);
+            }
+        }
+
+        /* АНИМАЦИЯ ДЛЯ АВАТАРКИ (плавное появление + лёгкое вращение) */
         .avatar {
             width: 100px;
             height: 100px;
-            background: url('https://i.postimg.cc/XNsKnH3z/a03fd0d7-6dc0-4c55-bc67-2d86589d75e4.jpg') center center / cover no-repeat;
+            background: url('https://i.postimg.cc/Zn0pLp6P/avatar.png') center center / cover no-repeat;
             background-color: #1a1a2e;
             border-radius: 50%;
             margin: 0 auto 20px;
-            box-shadow: 0 8px 20px rgba(230, 230, 168, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(230, 230, 168, 0.3);
+            box-shadow: 0 0 30px rgba(230, 230, 168, 0.15);
+            
+            animation: avatarFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes avatarFloat {
+            0% {
+                transform: translateY(0px);
+                box-shadow: 0 0 30px rgba(230, 230, 168, 0.15);
+            }
+            50% {
+                transform: translateY(-6px);
+                box-shadow: 0 0 50px rgba(230, 230, 168, 0.25);
+            }
+            100% {
+                transform: translateY(0px);
+                box-shadow: 0 0 30px rgba(230, 230, 168, 0.15);
+            }
         }
 
         h1 {
@@ -114,9 +180,20 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 16px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* АНИМАЦИЯ ДЛЯ КНОПОК — лёгкое увеличение при наведении и свечение */
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .btn:active {
+            transform: scale(0.97);
         }
 
         .btn-tiktok {
@@ -126,8 +203,8 @@
         }
 
         .btn-tiktok:hover {
-            transform: translateY(-2px);
             border-color: #e6e6a8;
+            box-shadow: 0 0 30px rgba(230, 230, 168, 0.15);
         }
 
         .btn-telegram {
@@ -136,7 +213,7 @@
         }
 
         .btn-telegram:hover {
-            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 136, 204, 0.3);
         }
 
         .stats {
@@ -150,6 +227,11 @@
 
         .stat {
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: scale(1.05);
         }
 
         .stat-number {
@@ -169,23 +251,6 @@
             margin-top: 20px;
             color: rgba(255, 255, 255, 0.3);
             font-size: 10px;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card {
-            animation: fadeIn 0.5s ease-out;
-            max-height: 98vh;   /* гарантия, что карточка не вылезет за экран */
-    overflow-y: auto;   /* если вдруг контент всё же не влезет — скролл будет только у карточки, но у тебя не влезет */
         }
 
         @media (max-width: 480px) {
